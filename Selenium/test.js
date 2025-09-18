@@ -6,8 +6,7 @@ const chrome = require('selenium-webdriver/chrome');
     try {
         await driver.get('https://demoqa.com/automation-practice-form');
 
-        // Удалим рекламу
-        await driver.executeScript("document.querySelectorAll('#fixedban, .advertisement').forEach(el => el.remove());");
+        
 
         await driver.findElement(By.id('firstName')).sendKeys('Иван');
         await driver.findElement(By.id('lastName')).sendKeys('Иванов');
@@ -15,7 +14,7 @@ const chrome = require('selenium-webdriver/chrome');
         await driver.findElement(By.css('label[for="gender-radio-1"]')).click();
         await driver.findElement(By.id('userNumber')).sendKeys('9001234567');
 
-        // Дата рождения
+        
         await driver.findElement(By.id('dateOfBirthInput')).click();
         await driver.findElement(By.css('.react-datepicker__month-select')).sendKeys('August');
         await driver.findElement(By.css('.react-datepicker__year-select')).sendKeys('1995');
@@ -36,7 +35,7 @@ const chrome = require('selenium-webdriver/chrome');
         await driver.findElement(By.id('submit')).click();
 
         await driver.wait(until.elementLocated(By.css('.modal-content')), 5000);
-        console.log('✅ Модальное окно с результатами найдено');
+        console.log;
     } finally {
         await driver.quit();
     }
